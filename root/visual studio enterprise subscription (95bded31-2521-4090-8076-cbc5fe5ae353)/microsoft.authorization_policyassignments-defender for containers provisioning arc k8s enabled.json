@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "Defender for Containers provisioning ARC k8s Enabled",
+      "kind": "policyassignments",
+      "apiVersion": "2025-03-01",
+      "location": "centralus",
+      "identity": {
+        "principalId": "ed17ca29-74b7-4272-ae09-a55423669e47",
+        "tenantId": "3d8ac230-21eb-4804-bb9b-023f56b5d669",
+        "type": "SystemAssigned"
+      },
+      "properties": {
+        "definitionVersion": "7.*.*-preview",
+        "description": "This policy assignment was automatically created by Azure Security Center for agent installation as configured in Security Center auto provisioning.",
+        "displayName": "Defender for Containers provisioning ARC k8s Enabled",
+        "enforcementMode": "Default",
+        "instanceId": "00000000-0000-0000-0000-000000000000",
+        "metadata": {},
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/708b60a6-d253-4fe0-9114-4be4c00f012c",
+        "scope": "/subscriptions/95bded31-2521-4090-8076-cbc5fe5ae353"
+      }
+    }
+  ],
+  "outputs": {}
+}

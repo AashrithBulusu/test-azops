@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "3a5082c6caa740a491191840",
+      "kind": "policyassignments",
+      "apiVersion": "2025-03-01",
+      "location": "global",
+      "properties": {
+        "definitionVersion": "1.*.*",
+        "displayName": "Deny Key Vault creation without Soft delete and Purge protection enabled with retention period of 7 days",
+        "enforcementMode": "Default",
+        "instanceId": "16736c0c-b508-4667-948a-f75655121edc",
+        "metadata": {
+          "parameterScopes": {}
+        },
+        "nonComplianceMessages": [],
+        "notScopes": [],
+        "overrides": [],
+        "parameters": {},
+        "policyDefinitionId": "/subscriptions/95bded31-2521-4090-8076-cbc5fe5ae353/providers/Microsoft.Authorization/policyDefinitions/af1f6c54-f346-47b7-bb69-ed84e7622c9d",
+        "resourceSelectors": [],
+        "scope": "/subscriptions/95bded31-2521-4090-8076-cbc5fe5ae353"
+      }
+    }
+  ],
+  "outputs": {}
+}

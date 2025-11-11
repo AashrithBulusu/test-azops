@@ -1,0 +1,75 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "input": {
+      "value": {
+        "kind": "policydefinitions",
+        "location": "global",
+        "name": "af1f6c54-f346-47b7-bb69-ed84e7622c9d",
+        "properties": {
+          "description": "Deny Key Vault creation without Soft delete and Purge protection enabled with retention period of 7 days\n ",
+          "displayName": "Deny Key Vault creation without Soft delete and Purge protection enabled with retention period of 7 days",
+          "metadata": {},
+          "mode": "All",
+          "parameters": {
+            "effect": {
+              "allowedValues": [
+                "Audit",
+                "Deny"
+              ],
+              "defaultValue": "Deny",
+              "metadata": {
+                "description": "Audit or Deny",
+                "displayName": "Effect"
+              },
+              "type": "String"
+            },
+            "retentionInDays": {
+              "defaultValue": 6,
+              "metadata": {
+                "description": "How long should deleted resources be retained for. Minimum value is 7 days, maximum is 365 days.",
+                "displayName": "Retention in Days"
+              },
+              "type": "Integer"
+            }
+          },
+          "policyRule": {
+            "if": {
+              "allOf": [
+                {
+                  "equals": "Microsoft.KeyVault/vaults",
+                  "field": "type"
+                },
+                {
+                  "anyOf": [
+                    {
+                      "equals": false,
+                      "field": "Microsoft.KeyVault/vaults/enablePurgeProtection"
+                    },
+                    {
+                      "equals": false,
+                      "field": "Microsoft.KeyVault/vaults/enableSoftDelete"
+                    },
+                    {
+                      "field": "Microsoft.KeyVault/vaults/softDeleteRetentionInDays",
+                      "lessOrEquals": "[parameters('retentionInDays')]"
+                    }
+                  ]
+                }
+              ]
+            },
+            "then": {
+              "effect": "[parameters('effect')]"
+            }
+          },
+          "version": "1.0.0",
+          "versions": [
+            "1.0.0"
+          ]
+        },
+        "type": "Microsoft.Authorization/policyDefinitions"
+      }
+    }
+  }
+}

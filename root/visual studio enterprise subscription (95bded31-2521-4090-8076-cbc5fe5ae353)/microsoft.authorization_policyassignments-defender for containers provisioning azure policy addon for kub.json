@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "Defender for Containers provisioning Azure Policy Addon for Kub",
+      "kind": "policyassignments",
+      "apiVersion": "2025-03-01",
+      "location": "centralus",
+      "identity": {
+        "principalId": "b14d1ef5-7c33-4159-98ab-050320a79772",
+        "tenantId": "3d8ac230-21eb-4804-bb9b-023f56b5d669",
+        "type": "SystemAssigned"
+      },
+      "properties": {
+        "definitionVersion": "4.*.*",
+        "description": "This policy assignment was automatically created by Azure Security Center for agent installation as configured in Security Center auto provisioning.",
+        "displayName": "Defender for Containers provisioning Azure Policy Addon for Kubernetes",
+        "enforcementMode": "Default",
+        "instanceId": "00000000-0000-0000-0000-000000000000",
+        "metadata": {},
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/a8eff44f-8c92-45c3-a3fb-9880802d67a7",
+        "scope": "/subscriptions/95bded31-2521-4090-8076-cbc5fe5ae353"
+      }
+    }
+  ],
+  "outputs": {}
+}
