@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "a80a7a2d0f2a48c48831a763",
+      "kind": "policyassignments",
+      "apiVersion": "2025-03-01",
+      "location": "global",
+      "properties": {
+        "definitionVersion": "1.*.*",
+        "displayName": "Deny Key Vault creation without RBAC permission enabled",
+        "enforcementMode": "Default",
+        "instanceId": "771030b3-b6c0-4b56-9c11-4d4efdc7c881",
+        "metadata": {
+          "parameterScopes": {}
+        },
+        "nonComplianceMessages": [],
+        "notScopes": [],
+        "overrides": [],
+        "parameters": {},
+        "policyDefinitionId": "/subscriptions/95bded31-2521-4090-8076-cbc5fe5ae353/providers/Microsoft.Authorization/policyDefinitions/e7e66e16-b9d0-4294-af23-bd21a0a4c633",
+        "resourceSelectors": [],
+        "scope": "/subscriptions/95bded31-2521-4090-8076-cbc5fe5ae353"
+      }
+    }
+  ],
+  "outputs": {}
+}

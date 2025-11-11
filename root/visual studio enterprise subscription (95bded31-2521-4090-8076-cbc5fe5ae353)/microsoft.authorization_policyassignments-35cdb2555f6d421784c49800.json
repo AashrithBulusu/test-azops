@@ -1,0 +1,41 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "35cdb2555f6d421784c49800",
+      "kind": "policyassignments",
+      "apiVersion": "2025-03-01",
+      "location": "global",
+      "properties": {
+        "definitionVersion": "1.*.*",
+        "displayName": "CIS Microsoft Azure Foundations Benchmark v2.0.0",
+        "enforcementMode": "Default",
+        "instanceId": "6501babc-d0c8-4772-91fd-0718c6fe5893",
+        "metadata": {
+          "parameterScopes": {}
+        },
+        "nonComplianceMessages": [],
+        "notScopes": [],
+        "overrides": [],
+        "parameters": {
+          "maximumDaysToRotate-d8cf8476-a2ec-4916-896e-992351803c44": {
+            "value": 180
+          }
+        },
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policySetDefinitions/06f19060-9e68-4070-92ca-f15cc126059e",
+        "resourceSelectors": [],
+        "scope": "/subscriptions/95bded31-2521-4090-8076-cbc5fe5ae353"
+      }
+    }
+  ],
+  "outputs": {}
+}
